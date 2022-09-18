@@ -43,41 +43,66 @@ func prognosP(city:String) {
 
 //prognosP(city: city)
 
-let Hleb = 25
-let Cola = 75
-let Chipsy = 60
-let Maslo = 320
-let Kefir = 90
-func pokupki(price:String, price2:String, price3:String, price4:String, price5:String){
-    if price == "Хлеб" {
-        print("Хлеб - \(Hleb) сом")
-    }else if price2 == "Кола"{
-        print("Кола - \(Cola) сом")
-    }else if price3 == "Чипсы"{
-        print("Чипсы - \(Chipsy) сом")
-    }else if price4 == "Масло"{
-        print("Масло - \(Maslo) сом")
-    }else if price5 == "Кефир"{
-        print("Кефир - \(Kefir) сом")
+var total = 0
+let hleb = 25
+let cola = 75
+let chipsy = 60
+let maslo = 320
+let kefir = 90
+
+func pokupki(product:String){
+    if product.lowercased() == "hleb" {
+        print("Хлеб - \(hleb) сом")
+        total += hleb
+    }else if product.lowercased() == "cola"{
+        print("Кола - \(cola) сом")
+        total += cola
+    }else if product.lowercased() == "chipsy"{
+        print("Чипсы - \(chipsy) сом")
+        total += chipsy
+    }else if product.lowercased() == "maslo"{
+        print("Масло - \(maslo) сом")
+        total += maslo
+    }else if product.lowercased() == "kefir"{
+        print("Кефир - \(kefir) сом")
+        total += kefir
+    }else{
+        print("No item found")
     }
-    
 }
 
 print("Продукты")
-let price = readLine()!
+let product1 = readLine()!
+
+pokupki(product: product1)
 
 print("Продукты")
-let price2 = readLine()!
+let product2 = readLine()!
+
+pokupki(product: product2)
 
 print("Продукты")
-let price3 = readLine()!
+let product3 = readLine()!
+
+pokupki(product: product3)
 
 print("Продукты")
-let price4 = readLine()!
+let product4 = readLine()!
+
+pokupki(product: product4)
 
 print("Продукты")
-let price5 = readLine()!
+let product5 = readLine()!
 
+pokupki(product: product5)
 
-pokupki(price: price, price2: price2, price3: price3, price4: price4, price5: price5)
+var discount = Double(total * 5)/100
+
+func inf() {
+    print("Общая стоимость: \(total)")
+    print("+Скидка: \((Double(total * 5)/100))сом ")
+    print("Итого: \(Double(total) - discount)сом")
+}
+
+inf()
 
